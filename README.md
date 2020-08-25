@@ -7,3 +7,6 @@ Draw bounding boxes in an image
 
 ### Example Usage
 *python capture_events.py --image invoices/img1.jpg*
+
+### Credits
+https://stackoverflow.com/a/50235566
