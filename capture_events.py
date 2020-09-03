@@ -1,4 +1,4 @@
-# import the necessary packages
+
 import cv2
 import argparse
 import json
@@ -11,9 +11,8 @@ bounding_box = []
 list = []
 json_list = ''
 layout_output_file = ''
-invoice_height = 800 # window max height for large invoices
 i = 0
-
+thinckness = 5
 def shape_selection(event, x, y, flags, param):
     # grab references to the global variables
     global ref_point, bounding_box, crop
@@ -38,7 +37,7 @@ def shape_selection(event, x, y, flags, param):
         print (bounding_box)
 
         # draw a rectangle around the region of interest
-        cv2.rectangle(image, ref_point[0], ref_point[1], (0, 255, 0), 2)
+        cv2.rectangle(image, ref_point[0], ref_point[1], (0, 255, 0), thinckness)
         cv2.imshow("image", image)
         list.append(bounding_box)
         #list.append(ref_point)
@@ -74,6 +73,10 @@ layout_output_file = f'layouts/layout_{filename}.json'
 
 # load the image, clone it, and setup the mouse callback function
 image = cv2.imread(args["image"])
+
+
+height = image.shape[0]
+thinckness = (int(height/300))
 clone = image.copy()
 cv2.namedWindow("image")
 cv2.setMouseCallback("image", shape_selection)
@@ -81,7 +84,7 @@ cv2.setMouseCallback("image", shape_selection)
 
 # keep looping until the 'q' key is pressed
 while True:
-    image = ResizeWithAspectRatio(image, height = invoice_height) 
+    image = ResizeWithAspectRatio(image, height = image.shape[0]) 
     # Resize by height, comment the above line to use the original height
     # if original height is used, a scrollbar (or another method) should be implemented
     # or... we can resize but might need to rescale the bounding_box *probably* to get everything in absolute values
