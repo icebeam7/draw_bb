@@ -1,0 +1,32 @@
+[
+    
+    [
+
+            {"title": "NaSup", "key" : "DODAVATEL", "dist": "IČ:"},
+            {"title": "InSup", "key" : "IČ:", "dist": "_next_"},
+            {"title": "TIDSup", "key" : "DIČ:", "dist": "_next_"},
+            {"title": "BaAcSup:", "key" : "účtu:", "dist": "_rest_"}
+
+    ],
+
+    [
+
+            {"title": "NaCus", "key" : "ODBĚRATEL", "dist": "IČ:"},
+            {"title": "InCus:", "key" : "IČ:", "dist": "_next_"},
+            {"title": "TIDCus:", "key" : "DIČ:", "dist": "_next_"},
+            {"title": "AdDel", "key" : "DODÁNÍ", "dist": "_rest_"}
+
+    ],
+
+    [
+
+            {"title": "OrdNum", "key" : "č.:", "dist": "_next_"},
+            {"title": "IssDay", "key" : "vystavení:", "dist": "_next_"},
+            {"title": "VATDay", "key" : "DUZP:", "dist": "_next_"},
+            {"title": "KoSy", "key" : "KS:", "dist": "_next_"},
+            {"title": "PayDay", "key" : "splatnosti:", "dist": "_next_"},
+            {"title": "VaSym", "key" : "VS:", "dist": "_next_"}
+
+    ]
+
+]
